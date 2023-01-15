@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DonationWebApp.Models.DisasterClass>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1 style="text-align:center;">Disasters</h1>
+
+<p style="text-align:center">
+    <a style="text-align:center;" asp-action="Create">Enter New Disaster Information</a>
+</p>
+<table style="background-color:orangered; color:azure;"class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.DisasterName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequiredAidTypes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.DisasterName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequiredAidTypes)
+            </td>
+            <td>
+                <a style="color:azure;"asp-action="Edit" asp-route-id="@item.DisasterId">Edit</a> |
+                <a style="color:azure;"asp-action="Details" asp-route-id="@item.DisasterId">Details</a> |
+                <a style="color:azure;"asp-action="Delete" asp-route-id="@item.DisasterId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

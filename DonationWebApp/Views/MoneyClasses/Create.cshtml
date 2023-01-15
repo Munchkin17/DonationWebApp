@@ -1,0 +1,40 @@
+﻿@model DonationWebApp.Models.MoneyClass
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1 style="text-align:center">Enter Monetary Details</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div style="text-align:center"class="form-group">
+                <label asp-for="DateOfDonation" class="control-label"></label>
+                <input asp-for="DateOfDonation" class="form-control" />
+                <span asp-validation-for="DateOfDonation" class="text-danger"></span>
+            </div>
+            <div style="text-align:center"class="form-group">
+                <label asp-for="AmountOfDonation" class="control-label"></label>
+                <input asp-for="AmountOfDonation" class="form-control" />
+                <span asp-validation-for="AmountOfDonation" class="text-danger"></span>
+            </div>
+            <div style="text-align:center"class="form-group">
+                <label asp-for="Donor" class="control-label"></label>
+                <input asp-for="Donor" class="form-control" />
+                <span asp-validation-for="Donor" class="text-danger"></span>
+            </div>
+            <div  style="text-align:center"class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-action="Index">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
