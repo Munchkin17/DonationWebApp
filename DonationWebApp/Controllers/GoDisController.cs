@@ -10,19 +10,19 @@ namespace DonationWebApp.Controllers
 {
     public class GoDisController : Controller
     {
-        private GoDiDbContext _databaseContext;
+        private DisasterContext _disasterContext;
 
-        public GoDisController(GoDiDbContext databaseContext)
+        public GoDisController(DisasterContext disasterContext)
         {
-            _databaseContext = databaseContext;
+            _disasterContext = disasterContext;
         }
         public IActionResult Index()
         {
-            var goDisasterList = (from disaster in _databaseContext.GoodsDisasters
+            var goDisasterList = (from Disasters in _disasterContext.Disaster
                                   select new SelectListItem()
                                   {
-                                      Text = disaster.DisasterName,
-                                      Value = disaster.DisId.ToString()
+                                      Text = Disasters.DisasterName,
+                                      Value = Disasters.DisasterId.ToString()
                                   }) .ToList();
             goDisasterList.Insert(0, new SelectListItem()
             {

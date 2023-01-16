@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DonationWebApp.Models
 {
-    [Table("DisasterClass")]
+    [Table("GoodsDisasterAllo")]
     public class GoodsDisaster
     {
         [Key]

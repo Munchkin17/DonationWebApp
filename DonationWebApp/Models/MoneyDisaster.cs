@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace DonationWebApp.Models
 {
-    [Table("Disaster")]
+    [Table("MoneyDisasterAllo")]
     public class MoneyDisaster
     {
         [Key]
-        public int DisasterId { get; set; }
-        public string DisasterName { get; set; }
+        public int MonDisId { get; set; }
+        public string MonDisasterName { get; set; }
 
-        public int AmountDonated { get; set; }
+        public int MonAmountDonated { get; set; }
     }
 }

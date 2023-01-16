@@ -10,15 +10,15 @@ namespace DonationWebApp.Controllers
 {
     public class MoDisController1 : Controller
     {
-        private MoDiDbContext _databaseContext;
+        private DisasterContext _disasterContext;
 
-        public MoDisController1(MoDiDbContext databaseContext)
+        public MoDisController1(DisasterContext disasterContext)
         {
-            _databaseContext = databaseContext;
+            _disasterContext = disasterContext;
         }
         public IActionResult Index()
         {
-            var moDisasterList = (from disaster in _databaseContext.MoneyDisaster
+            var moDisasterList = (from disaster in _disasterContext.Disaster
                                   select new SelectListItem()
                                   {
                                       Text = disaster.DisasterName,
@@ -34,7 +34,7 @@ namespace DonationWebApp.Controllers
         }
         public IActionResult Index(MoneyDisasterViewModel moneyDisasterViewModel)
         {
-            var selectedValue = moneyDisasterViewModel.DisasterId;
+            var selectedValue = moneyDisasterViewModel.MonDisId;
             return View(moneyDisasterViewModel);
         }
     }
