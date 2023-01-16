@@ -8,7 +8,7 @@
 
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div style="margin-left:auto;margin-right:auto" class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div style="text-align:center"class="form-group">
@@ -32,22 +32,22 @@
             </div>
             <div style="text-align:center"class="form-group">
                 <label asp-for="AddNewCategory" class="control-label"></label>
-                <input asp-for="AddNewCategory" class="form-control" disabled/>
+                <input asp-for="AddNewCategory" class="form-control" disabled  style="text-transform:capitalize;"/>
                 <span asp-validation-for="AddNewCategory" class="text-danger"></span>
             </div>
             <div style="text-align:center"class="form-group">
                 <label asp-for="DescriptionOfItem" class="control-label"></label>
-                <input asp-for="DescriptionOfItem" class="form-control" />
+                <input asp-for="DescriptionOfItem" class="form-control"  style="text-transform:capitalize;"/>
                 <span asp-validation-for="DescriptionOfItem" class="text-danger"></span>
             </div>
             <div style="text-align:center"class="form-group">
                 <label asp-for="Donor" class="control-label"></label>
-                <input asp-for="Donor" class="form-control" />
+                <input asp-for="Donor" class="form-control" style="text-transform:capitalize;"/>
                 <span asp-validation-for="Donor" class="text-danger"></span>
             </div>
             <div style="text-align:center" class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
-                <a asp-action="Index">Back to List</a>
+                <a asp-action="Index" class="btn btn-primary">Back to List</a>
             </div>
         </form>
     </div>

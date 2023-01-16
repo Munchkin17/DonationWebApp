@@ -6,8 +6,9 @@
 
 <h1 style="text-align:center" >Monetary Donation Information</h1>
 
-<p  style="text-align:center">
-    <a asp-action="Create">Donate Money</a>
+<p style="text-align:center">
+    <a asp-action="Create" class="btn btn-primary">Donate Money</a>
+    <a asp-controller="MoDisController1" asp-action="Index" class="btn btn-primary">Allocate Money</a>
 </p>
 <table style="background-color:orangered; color:azure;"class="table">
     <thead>
@@ -15,10 +16,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.DateOfDonation)
             </th>
-            <th>
+            <th style="text-align:center;">
                 @Html.DisplayNameFor(model => model.AmountOfDonation)
             </th>
-            <th>
+            <th style="text-align:left;">
                 @Html.DisplayNameFor(model => model.Donor)
             </th>
             <th></th>
@@ -30,10 +31,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfDonation)
             </td>
-            <td>
+            <td style="text-align:center;">
                 @Html.DisplayFor(modelItem => item.AmountOfDonation)
             </td>
-            <td>
+            <td style="text-align:left; text-transform:capitalize;">
                 @Html.DisplayFor(modelItem => item.Donor)
             </td>
             <td>

@@ -7,7 +7,8 @@
 <h1 style="text-align:center;">Goods Donations Information</h1>
 
 <p style="text-align:center;">
-    <a asp-action="Create">Donate Goods</a>
+    <a asp-action="Create" class="btn btn-primary">Donate Goods</a>
+    <a asp-controller="GoDis" asp-action="Index" class="btn btn-primary">Allocate Goods</a>
 </p>
 <table style="background-color:orangered;color:azure;"class="table">
     <thead>
@@ -35,23 +36,23 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr >
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfDonation)
             </td>
-            <td>
+            <td style="text-align:center;">
                 @Html.DisplayFor(modelItem => item.NumberOfItems)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
-            <td>
+            <td style="text-align:center; text-transform:capitalize;">
                 @Html.DisplayFor(modelItem => item.AddNewCategory)
             </td>
-            <td>
+            <td style="text-align:left;text-transform:capitalize;">
                 @Html.DisplayFor(modelItem => item.DescriptionOfItem)
             </td>
-            <td>
+            <td style="text-align:left;text-transform:capitalize;">
                 @Html.DisplayFor(modelItem => item.Donor)
             </td>
             <td>

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DonationWebApp.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DonationWebApp.Controllers
 {
@@ -17,13 +18,14 @@ namespace DonationWebApp.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: DisasterClasses
         public async Task<IActionResult> Index()
         {
             return View(await _context.Disaster.ToListAsync());
         }
 
+        [Authorize]
         // GET: DisasterClasses/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -42,6 +44,7 @@ namespace DonationWebApp.Controllers
             return View(disasterClass);
         }
 
+        [Authorize]
         // GET: DisasterClasses/Create
         public IActionResult Create()
         {
@@ -64,6 +67,7 @@ namespace DonationWebApp.Controllers
             return View(disasterClass);
         }
 
+        [Authorize]
         // GET: DisasterClasses/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -115,6 +119,7 @@ namespace DonationWebApp.Controllers
             return View(disasterClass);
         }
 
+        [Authorize]
         // GET: DisasterClasses/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {

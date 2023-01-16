@@ -39,7 +39,9 @@ namespace DonationWebApp
             services.AddDbContext<MoneyContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddDbContext<GoodsContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
             services.AddDbContext<DisasterContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
-         
+            services.AddDbContext<MoDiDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            services.AddDbContext<GoDiDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
