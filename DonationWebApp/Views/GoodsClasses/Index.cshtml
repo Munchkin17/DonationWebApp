@@ -35,23 +35,23 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+        <tr >
             <td>
                 @Html.DisplayFor(modelItem => item.DateOfDonation)
             </td>
-            <td>
+            <td style="text-align:center;">
                 @Html.DisplayFor(modelItem => item.NumberOfItems)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Category)
             </td>
-            <td>
+            <td style="text-align:center;">
                 @Html.DisplayFor(modelItem => item.AddNewCategory)
             </td>
-            <td>
+            <td style="text-align:center;">
                 @Html.DisplayFor(modelItem => item.DescriptionOfItem)
             </td>
-            <td>
+            <td style="text-align:center;">
                 @Html.DisplayFor(modelItem => item.Donor)
             </td>
             <td>
