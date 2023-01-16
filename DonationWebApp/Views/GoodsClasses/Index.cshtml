@@ -31,9 +31,7 @@
             <th>
                 @Html.DisplayNameFor(model => model.Donor)
             </th>
-            <th style="text-align:left;">
-            </th>
-            <th></th>
+          
         </tr>
     </thead>
     <tbody>
@@ -62,4 +60,5 @@
         }
     </tbody>
 </table>
-Total Goods Donated:@Model.Sum(i => i.NumberOfItems)
+<h4 style="color:azure; background-color:mediumpurple; border: 5px solid mediumpurple; text-align:center;">
+    Total Goods Donated:@Model.Sum(i => i.NumberOfItems)</h4>
