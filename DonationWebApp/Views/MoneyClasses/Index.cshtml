@@ -4,13 +4,13 @@
     ViewData["Title"] = "Index";
 }
 
-<h1 style="text-align:center" >Monetary Donation Information</h1>
+<h1 style="text-align:center">Monetary Donation Information</h1>
 
 <p style="text-align:center">
     <a asp-action="Create" class="btn btn-primary">Donate Money</a>
     <a asp-controller="MoDisController1" asp-action="Index" class="btn btn-primary">Allocate Money</a>
 </p>
-<table style="background-color:orangered; color:azure;"class="table">
+<table style="background-color:orangered; color:azure;" class="table">
     <thead>
         <tr>
             <th>
@@ -22,27 +22,26 @@
             <th style="text-align:left;">
                 @Html.DisplayNameFor(model => model.Donor)
             </th>
+            
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfDonation)
-            </td>
-            <td style="text-align:center;">
-                @Html.DisplayFor(modelItem => item.AmountOfDonation)
-            </td>
-            <td style="text-align:left; text-transform:capitalize;">
-                @Html.DisplayFor(modelItem => item.Donor)
-            </td>
-            <td>
-                <a style="color:azure;"asp-action="Edit" asp-route-id="@item.DonorId">Edit</a> |
-                <a style="color:azure;"asp-action="Details" asp-route-id="@item.DonorId">Details</a> |
-                <a style="color:azure;"asp-action="Delete" asp-route-id="@item.DonorId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfDonation)
+                </td>
+                <td style="text-align:center;">
+                    @Html.DisplayFor(modelItem => item.AmountOfDonation)
+                </td>
+                <td style="text-align:left; text-transform:capitalize;">
+                    @Html.DisplayFor(modelItem => item.Donor)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+ <h4 style="color:azure; background-color:mediumpurple; border: 5px solid mediumpurple; text-align:center;">
+    Total Amount Donated: @Model.Sum(i => i.AmountOfDonation)</h4>
