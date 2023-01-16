@@ -18,7 +18,7 @@ namespace DonationWebApp.Controllers
         {
             _context = context;
         }
-        [Authorize]
+        
         // GET: MoneyClasses
         public async Task<IActionResult> Index()
         {

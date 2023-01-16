@@ -10,7 +10,7 @@
     <a asp-action="Create" class="btn btn-primary">Donate Goods</a>
     <a asp-controller="GoDis" asp-action="Index" class="btn btn-primary">Allocate Goods</a>
 </p>
-<table style="background-color:orangered;color:azure;"class="table">
+<table style="background-color:orangered;color:azure;" class="table">
     <thead>
         <tr>
             <th>
@@ -31,36 +31,35 @@
             <th>
                 @Html.DisplayNameFor(model => model.Donor)
             </th>
+            <th style="text-align:left;">
+            </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr >
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfDonation)
-            </td>
-            <td style="text-align:center;">
-                @Html.DisplayFor(modelItem => item.NumberOfItems)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td style="text-align:center; text-transform:capitalize;">
-                @Html.DisplayFor(modelItem => item.AddNewCategory)
-            </td>
-            <td style="text-align:left;text-transform:capitalize;">
-                @Html.DisplayFor(modelItem => item.DescriptionOfItem)
-            </td>
-            <td style="text-align:left;text-transform:capitalize;">
-                @Html.DisplayFor(modelItem => item.Donor)
-            </td>
-            <td>
-                <a style="color:azure;"asp-action="Edit" asp-route-id="@item.DonorId">Edit</a> |
-                <a style="color:azure;"asp-action="Details" asp-route-id="@item.DonorId">Details</a> |
-                <a style="color:azure;"asp-action="Delete" asp-route-id="@item.DonorId">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfDonation)
+                </td>
+                <td style="text-align:center;">
+                    @Html.DisplayFor(modelItem => item.NumberOfItems)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Category)
+                </td>
+                <td style="text-align:center; text-transform:capitalize;">
+                    @Html.DisplayFor(modelItem => item.AddNewCategory)
+                </td>
+                <td style="text-align:left;text-transform:capitalize;">
+                    @Html.DisplayFor(modelItem => item.DescriptionOfItem)
+                </td>
+                <td style="text-align:left;text-transform:capitalize;">
+                    @Html.DisplayFor(modelItem => item.Donor)
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+Total Goods Donated:@Model.Sum(i => i.NumberOfItems)
