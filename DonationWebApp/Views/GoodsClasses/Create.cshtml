@@ -23,7 +23,7 @@
             </div>
             <div style="text-align:center"class="form-group">
                 <label asp-for="Category" class="control-label"></label>
-                <select asp-for="Category" class="form-control" onclick="otherCategory()">
+                <select asp-for="Category" class="form-control" onchange="otherCategory()">
                     <option value="Clothes">Clothes</option>
                     <option value="Non-Perishables">Non-Perishables</option>
                     <option value="Other">Other</option>
@@ -52,7 +52,19 @@
         </form>
     </div>
 </div>
-
+ 
+<script type="text/javascript">
+    function otherCategory()
+    {
+        if (document.getElementById("Category").value == "Other")
+        { 
+            document.getElementById("AddNewCategory").disabled = false;
+        } else if (document.getElementById("Category").value != "Other") {
+            document.getElementById("AddNewCategory").disabled = true;
+        }
+    }
+       
+</script>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
